@@ -1,0 +1,51 @@
+baseURL: https://rentalproperty.pkarun.com/
+languageCode: en-us
+title: Rental Property
+theme: PaperMod
+permalinks:
+  posts: /:slug
+
+params:
+  defaultTheme: auto
+  ShowCodeCopyButtons: false
+  ShowPostNavLinks: false
+  gtm_id: GTM-PGKJGBM
+  gtm_datalayer: basic
+ 
+
+  homeInfoParams:
+    Title:  
+    Content: 
+
+assets:
+  favicon16x16: /assets/favicon-16x16.png
+  favicon32x32: /assets/favicon-32x32.png
+  apple_touch_icon: /assets/apple-touch-icon.png
+  
+favicon: favicon.ico
+
+
+menu:
+  main:
+  - identifier: Free
+    name: Free
+    url: /free/
+    weight: 10
+  - identifier: About Us
+    name: About Us
+    url: /about-us/
+    weight: 20
+  - identifier: Search
+    name: Search
+    url: /search/
+    weight: 40
+
+ 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+
+  
