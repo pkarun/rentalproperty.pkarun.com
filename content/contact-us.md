@@ -6,15 +6,8 @@ draft: false
 
 **Name:** P K Arun
 
-**Email:** arun [at] houseconstructionguide.com
+**Email:** arun [at] pkarun.com
 
 
-**Physical Address:**
-
-Sri Vishnu Nilaya, 
-Dr. Rajkumar Main Road, 
-2nd Cross Road, 1st Floor, 
-House No 3, Acharya College Main Road, 
-Shanthi Nagar, Chikkabanavara, 
-Achitnagar Post, Bangalore - 560107
+ 
 

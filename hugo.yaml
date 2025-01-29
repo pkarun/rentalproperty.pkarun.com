@@ -1,6 +1,6 @@
 baseURL: https://rentalproperty.pkarun.com/
 languageCode: en-us
-title: Rental Property
+title: P K Arun Rental Property Blog
 theme: PaperMod
 permalinks:
   posts: /:slug
@@ -27,14 +27,6 @@ favicon: favicon.ico
 
 menu:
   main:
-  - identifier: Free
-    name: Free
-    url: /free/
-    weight: 10
-  - identifier: About Us
-    name: About Us
-    url: /about-us/
-    weight: 20
   - identifier: Search
     name: Search
     url: /search/
