@@ -1,43 +1,57 @@
 baseURL: https://rentalproperty.pkarun.com/
-languageCode: en-us
+theme: hugo-simple-main
+languageCode: en
 title: P K Arun Rental Property Blog
-theme: PaperMod
+copyright: 
+enableRobotsTXT: true
+capitalizeListTitles: false
+disableKinds:
+  - taxonomy
+taxonomies:
+  tag: tags
 permalinks:
-  posts: /:slug
-
+  blog: /:slugorfilename/
+  tags: /tags/:slug
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+  highlight:
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: true
+    style: catppuccin-mocha
 params:
-  defaultTheme: auto
-  ShowCodeCopyButtons: false
-  ShowPostNavLinks: false
-  gtm_id: GTM-PGKJGBM
-  gtm_datalayer: basic
- 
-
-  homeInfoParams:
-    Title:  
-    Content: 
-
-assets:
-  favicon16x16: /assets/favicon-16x16.png
-  favicon32x32: /assets/favicon-32x32.png
-  apple_touch_icon: /assets/apple-touch-icon.png
-  
-favicon: favicon.ico
-
-
+  title: Hugo Simple
+  description: Hugo Simple Demo
+  favicon: images/favicon.png
+  dateFormat: 2006-01-02
+  hideMadeWithLine: false
+  hideRSSLink: true
+  author:
+    name: P K Arun
+    email: arun@pkarun.com
 menu:
   main:
-  - identifier: Search
-    name: Search
-    url: /search/
-    weight: 40
+    - name: Home
+      pageRef: /
+      weight: 10
+    - name: Blog
+      pageRef: /blog
+      weight: 20
 
- 
+services:
+  rss:
+    limit: 42
+pagination:
+  pagerSize: 16
 outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON # necessary for search
-
-
-  
+  section:
+    - html
+  taxonomy:
+    - html
+  term:
+    - html

@@ -1,0 +1,10 @@
+{{ with .Site.Copyright }}
+  <span>{{ . }}</span>
+{{ end }}
+{{ if not .Site.Params.hideMadeWithLine }}
+  <span>
+    {{ if .Site.Copyright }}|{{ end }}
+    Made by
+    <a href="https://pkarun.com/">P K Arun</a>
+  </span>
+{{ end }}

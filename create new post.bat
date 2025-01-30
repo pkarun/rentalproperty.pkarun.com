@@ -11,17 +11,17 @@ for /f "tokens=* delims=" %%A in ('powershell -Command "'%ARTICLE_NAME%' -replac
 :: Step 4: Check if images are required
 if /i "%IMAGES_REQUIRED%"=="y" (
     :: Create a folder for the article and images
-    set POST_DIR=content\posts\%POST_SLUG%
+    set POST_DIR=content\blog\%POST_SLUG%
     if not "%POST_DIR%"=="" (
         powershell -Command "New-Item -Path '%POST_DIR%' -ItemType Directory -Force > $null 2>&1"
         powershell -Command "New-Item -Path '%POST_DIR%\images' -ItemType Directory -Force > $null 2>&1"
     )
     :: Create the index.md file in the folder
-    powershell -Command "hugo new content/posts/%POST_SLUG%/index.md"
+    powershell -Command "hugo new content/blog/%POST_SLUG%/index.md"
 ) else (
-    :: Directly create the index.md file in content/posts with no additional folders
-    powershell -Command "hugo new content/posts/%POST_SLUG%.md"
-    set POST_DIR=content\posts
+    :: Directly create the index.md file in content/blog with no additional folders
+    powershell -Command "hugo new content/blog/%POST_SLUG%.md"
+    set POST_DIR=content\blog
 )
 
 :: Debugging: Uncomment the next line to log the directory being created
