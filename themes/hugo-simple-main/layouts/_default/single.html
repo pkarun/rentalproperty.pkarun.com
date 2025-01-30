@@ -1,14 +1,7 @@
 {{ define "main" }}
   {{ if eq .Type "blog" }}
     {{ if not .Params.menu }}
-      {{ $tags := .GetTerms "tags" }}
-      {{ if gt (len $tags) 0 }}
-        <p>
-          {{ range $tags }}
-            <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
-          {{ end }}
-        </p>
-      {{ end }}
+
     {{ end }}
   {{ end }}
   {{ if .Params.toc }}
@@ -20,4 +13,26 @@
   <content>
     {{ .Content }}
   </content>
+  
+    {{ $tags := .GetTerms "tags" }}
+  {{ if gt (len $tags) 0 }}
+    <p>
+      {{ range $tags }}
+        <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
+      {{ end }}
+    </p>
+  {{ end }}
+  
+        <p>
+        <i>
+          <time
+            style="color: var(--text-light);"
+            datetime="{{ .Date.Format "02-01-2006" }}"
+            pubdate
+          >
+            {{ .Date.Format (default "02-01-2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </p>
+	  
 {{ end }}

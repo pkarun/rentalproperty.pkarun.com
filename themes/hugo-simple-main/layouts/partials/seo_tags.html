@@ -19,10 +19,11 @@
     {{- end }}
   {{- end }}"
 />
+
 <meta
   name="keywords"
   content="{{ if .IsPage -}}
-    {{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}
+    {{ range $index, $tag := .Params.tags }}{{ $tag }}, {{ end }}
   {{- else -}}
     {{ range $plural, $terms := .Site.Taxonomies -}}
       {{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}
@@ -34,14 +35,24 @@
   <meta name="author" content="{{ . }}" />
 {{ end }}
 
+<!-- Add noindex, nofollow for tag pages, category pages, and paginated pages -->
+{{ if or 
+    (eq .Type "tags") 
+    (eq .Type "categories") 
+    (and 
+      (or .IsHome (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term")) 
+      .Paginator 
+      (gt .Paginator.PageNumber 1)
+    )
+}}
+  <meta name="robots" content="noindex, follow">
+{{ end }}
 
 <!-- Open Graph / Facebook -->
 {{ template "_internal/opengraph.html" . }}
 
-
 <!-- Twitter -->
 {{ template "_internal/twitter_cards.html" . }}
-
 
 <!-- Microdata -->
 {{ template "_internal/schema.html" . }}
