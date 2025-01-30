@@ -27,7 +27,7 @@ markup:
 params:
   title: P K Arun Rental Property Blog
   description: P K Arun Rental Property Blog for Indian Landlords.  
-  favicon: images/favicon.png
+  favicon: images/favicon.ico
   dateFormat: 02-01-2006
   hideMadeWithLine: false
   hideRSSLink: true
